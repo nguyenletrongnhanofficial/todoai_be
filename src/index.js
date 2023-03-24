@@ -31,7 +31,6 @@ import authRouter from "./routers/auth.router.js";
 app.use("/auth", authRouter);
 //#end region
 
-
 //#region connect to database
 mongoose
   .connect(process.env.MONGO_URL, {
