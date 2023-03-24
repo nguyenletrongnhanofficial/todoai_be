@@ -21,6 +21,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 //#end region
 mongoose.set('strictQuery', true);
+
+//#region import router
+import authRouter from "./routers/auth.router.js";
+//#end region
+
+
+//#region setup router
+app.use("/auth", authRouter);
+//#end region
+
+
 //#region connect to database
 mongoose
   .connect(process.env.MONGO_URL, {
