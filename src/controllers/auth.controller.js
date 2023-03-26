@@ -22,7 +22,7 @@ export const AuthController = {
   //GET An USER
   getUser: async (req, res) => {
     try {
-      const user = await User.findById(req.params.id).populate(["//"]);
+      const user = await User.findById(req.params.id).populate();
       res.status(200).json({
         success: true,
         message: user,
