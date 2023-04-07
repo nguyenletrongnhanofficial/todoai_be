@@ -24,11 +24,14 @@ mongoose.set('strictQuery', true);
 
 //#region import router
 import authRouter from "./routers/auth.router.js";
+import taskRouter from "./routers/task.router.js";
+
 //#end region
 
 
 //#region setup router
 app.use("/auth", authRouter);
+app.use("/task", taskRouter);
 //#end region
 
 //#region connect to database
