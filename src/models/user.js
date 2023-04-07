@@ -28,7 +28,11 @@ const user = new mongoose.Schema({
     required: true,
     type: String,
   },
-
+   
+  tasks:[{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Task"
+  }]
 });
 const User = mongoose.model("user", user, "user");
 export default User;
