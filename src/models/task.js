@@ -4,6 +4,7 @@ const taskSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
+        default: 'abv'
     },
     date: {
         type: String,
@@ -15,6 +16,7 @@ const taskSchema = new mongoose.Schema({
     },
     isComplete: {
         type: Boolean,
+        default: "false"
         
     },
     color: {

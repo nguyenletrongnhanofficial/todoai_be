@@ -18,6 +18,6 @@ router.get("/getUser/:id", AuthController.getUser);
 router.put("/updateUser/:id", AuthController.updateUser);
 
 //DELETE AN USER
-router.delete("deleteUser/:id", AuthController.deleteUser);
+router.delete("/deleteUser/:id", AuthController.deleteUser);
 
 export default router;

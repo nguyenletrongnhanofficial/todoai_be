@@ -69,7 +69,7 @@ export const taskController =  {
             })
         }
         catch(error){
-            req.status(500).json({
+            res.status(500).json({
                 success: false,
                 message: "Error when update task",
             })
