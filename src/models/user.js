@@ -31,7 +31,6 @@ const user = new mongoose.Schema({
    
   tasks:[{
     type: mongoose.Schema.Types.ObjectId,
-    required: true,
     ref: "Task"
   }]
 });
