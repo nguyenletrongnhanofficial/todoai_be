@@ -14,6 +14,9 @@ const taskSchema = new mongoose.Schema({
         type: String,
        
     },
+    time: {
+        type: String,
+    },
     isComplete: {
         type: Boolean,
         default: "false"
