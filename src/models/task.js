@@ -23,7 +23,7 @@ const taskSchema = new mongoose.Schema({
         
     },
     color: {
-        type: Number,
+        type: String,
     },
     option:{
         type: String
