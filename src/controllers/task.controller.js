@@ -16,7 +16,8 @@ export const taskController =  {
             }
             res.status(200).json({
                 success: true,
-                message: savedTask
+                message: savedTask._id,
+                
             });
         }catch(error){
             res.status(500).json({
@@ -61,7 +62,14 @@ export const taskController =  {
     //UPDATE TASK
     updateTask: async(req, res) => {
         try{
-            const task = await Task.findById(req.params.id);
+            const task = await Task.findOne({_id: req.params.id});
+            
+            if (!task) {
+                return res.status(404).json({
+                    success: false,
+                    message: "Task not found",
+                });
+            }
             await task.updateOne({$set: req.body});
             res.status(200).json({
                 success: true,

@@ -23,9 +23,12 @@ const taskSchema = new mongoose.Schema({
         
     },
     color: {
-        type: Number,
+        type: String,
     },
     option:{
+        type: String
+    },
+    userId:{
         type: String
     },
     user:{
@@ -34,5 +37,5 @@ const taskSchema = new mongoose.Schema({
       }
 });
 
-const Task = mongoose.model("Task", taskSchema);
+const Task = mongoose.model("Task", taskSchema, "Tasks");
 export default Task;
