@@ -1,5 +1,4 @@
 import User from "../models/user.js";
-import Task from "../models/task.js";
 import validator from "validator";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
@@ -23,7 +22,7 @@ export const AuthController = {
   //GET An USER
   getUser: async (req, res) => {
     try {
-      const user = await User.findById(req.params.id).populate("tasks");
+      const user = await User.findById(req.params.id);
       res.status(200).json({
         success: true,
         message: user,
@@ -39,7 +38,7 @@ export const AuthController = {
   //DELETE
   deleteUser: async (req, res) => {
     try {
-      await Task.updateMany({user: req.params.id}, {user: null});
+      await Task.updateMany({ user: req.params.id }, { user: null });
       await User.findByIdAndDelete(req.params.id);
       res.status(200).json({
         success: true,
