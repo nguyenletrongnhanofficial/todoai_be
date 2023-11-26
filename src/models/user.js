@@ -5,7 +5,7 @@ const user = new mongoose.Schema({
     required: true,
     type: String,
   },
-
+  
   password: {
     required: true,
     type: String,
@@ -19,14 +19,15 @@ const user = new mongoose.Schema({
     type: String,
   },
 
-  name: {
+  name:{
     required: true,
     type: String,
   },
-
-  test: {
-    type: String,
-  }
+   
+  tasks:[{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Task"
+  }]
 });
 const User = mongoose.model("user", user, "user");
 export default User;

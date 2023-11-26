@@ -24,12 +24,14 @@ mongoose.set('strictQuery', true);
 
 //#region import router
 import authRouter from "./routers/auth.router.js";
+import taskRouter from "./routers/task.router.js";
 
 //#end region
 
 
 //#region setup router
 app.use("/auth", authRouter);
+app.use("/task", taskRouter);
 //#end region
 
 //#region connect to database
@@ -48,6 +50,6 @@ mongoose
 
 //#region start server
 server.listen(PORT, "0.0.0.0", () => {
-  console.log(`Server running on port: http://localhost:${PORT}`);
-});
+    console.log(`Server running on port: http://localhost:${PORT}`);
+  });
 //#end region
